@@ -15,7 +15,7 @@ public class LinkedlistLearn {
         this.size=0;
     }
 
-
+//main decalration of a linkelist
     private class Node {
         private int  value;
         private  Node next;
@@ -78,7 +78,53 @@ public class LinkedlistLearn {
 
         }
     }
-    
+
+    public int deleteFirst(){
+    int val = head.value;
+
+
+        head = head.next;
+
+        if(head==null){
+            tail=null;
+        }
+size--;
+        return val;
+    }
+
+    public int deleteLast(){
+
+        if(size<=1) return deleteFirst();
+
+            Node secondLast = get(size-2);;
+            int val = tail.value;
+            tail= secondLast;
+            tail.next = null;
+            size--;
+            return val;
+    }
+
+
+    public  int deleteany(int index){
+         if(index == 0) return deleteFirst();
+         else if(index==size) return deleteLast();
+         else{
+             Node nodetoBeDeleted = get(index-1);
+             int val = nodetoBeDeleted.next.value;
+             nodetoBeDeleted.next=nodetoBeDeleted.next.next;
+             return val;
+         }
+
+    }
+
+    public Node get(int index){
+        Node node = head;
+        for(int i=0;i< index;i++){
+            node=node.next;
+        }
+        return node;
+    }
+
     public void display(){
         Node temp = head;
         while(temp!=null){

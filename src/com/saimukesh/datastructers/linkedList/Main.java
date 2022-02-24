@@ -9,6 +9,11 @@ public class Main {
         ll.insertFirst(0);
         ll.insert(100,0);
         ll.insertLast(150);
+        ll.deleteLast();
+        ll.display();
+        ll.insertLast(150);
+            ll.deleteFirst();
         ll.display();
     }
-}
+    }
+
