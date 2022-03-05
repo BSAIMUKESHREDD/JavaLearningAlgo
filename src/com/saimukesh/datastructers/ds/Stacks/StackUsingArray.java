@@ -1,6 +1,5 @@
-package com.saimukesh.datastructers.ds;
+package com.saimukesh.datastructers.ds.Stacks;
 // { Driver Code Starts
-import java.util.*;
 
 import java.io.*;
 import java.lang.*;
