@@ -1,4 +1,4 @@
-package com.saimukesh.datastructers.linkedList;
+package com.saimukesh.datastructers.linkedList.Theory;
 
 public class ListNode {
      int val;

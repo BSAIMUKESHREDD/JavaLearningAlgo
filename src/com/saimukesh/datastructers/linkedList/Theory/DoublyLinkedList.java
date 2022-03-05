@@ -1,4 +1,4 @@
-package com.saimukesh.datastructers.linkedList;
+package com.saimukesh.datastructers.linkedList.Theory;
 
 
 public class DoublyLinkedList {
@@ -119,6 +119,40 @@ public class DoublyLinkedList {
             current = current.next;
         }
         return false;
+    }
+
+    public static class Main {
+        public static void main(String[] args) {
+            DeletingMultipleValues.LinkedlistLearn ll = new DeletingMultipleValues.LinkedlistLearn();
+            DoublyLinkedList dl = new DoublyLinkedList();
+            Node n = new Node(10);
+            dl.setHead(n);
+
+            System.out.println(dl.head.value);
+            Node n2 = new Node(100);
+            dl.setTail(n2);
+            System.out.println(dl.tail.value);
+            Node n3 = new Node(120);
+            Node n4 = new Node(130);
+    dl.insertBefore(n,n4);
+            //System.out.println(dl.head.value);
+
+
+
+
+    /*
+            ll.insertFirst(54);
+            ll.insertFirst(54545);
+            ll.insertFirst(0);
+            ll.insert(100,0);
+            ll.insertLast(150);
+            ll.deleteLast();
+            ll.display();
+            ll.insertLast(150);
+                ll.deleteFirst();
+            ll.display();*/
+
+        }
     }
 }
 
