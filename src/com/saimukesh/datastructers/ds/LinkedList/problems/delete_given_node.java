@@ -1,4 +1,4 @@
-package com.saimukesh.datastructers.ds.problems;
+package com.saimukesh.datastructers.ds.LinkedList.problems;
 
 public class delete_given_node {
 
