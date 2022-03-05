@@ -1,4 +1,4 @@
-package com.saimukesh.datastructers.linkedList.problems;
+package com.saimukesh.datastructers.ds.problems;
 
 import java.util.LinkedList;
 

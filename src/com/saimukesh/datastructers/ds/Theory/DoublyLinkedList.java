@@ -1,4 +1,4 @@
-package com.saimukesh.datastructers.linkedList.Theory;
+package com.saimukesh.datastructers.ds.Theory;
 
 
 public class DoublyLinkedList {

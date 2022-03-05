@@ -1,7 +1,4 @@
-package com.saimukesh.datastructers.linkedList;
-import java.util.*;
-
-import java.util.Stack;
+package com.saimukesh.datastructers.ds;
 
 public class stacksLearning {
     // Stack<Integer> st = new Stack<>();
