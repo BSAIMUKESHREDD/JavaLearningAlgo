@@ -16,8 +16,8 @@ int s = 0;
       //  System.out.println(stack.toString());
         while(stack.size() != 0) {
             for (int i = 0; i < price.length; i++) {
-                System.out.println(price[i]);
-                if (stack.peek() < price[i]) {
+               // System.out.println(price[i]);
+                if (stack.peek() > price[i]) {
                          s = stack.size()-i-1; // some differnce in logic and ans id different
 
                 }
@@ -25,7 +25,7 @@ int s = 0;
             }
             arrayList.add(s);
             stack.pop();
-            System.out.println(stack.toString());
+           // System.out.println(stack.toString());
 
         }
         return arrayList.toString();
