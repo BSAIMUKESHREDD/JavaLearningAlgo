@@ -2,23 +2,18 @@ package com.saimukesh.datastructers.ds.arrays.algoexpert;
 import java.util.*;
 public class targetSubsequnece {
 
-    public static boolean isValidSubsequence(List<Integer> array, List<Integer> sequence) {
-        // Write your code here.
-        int z=0;
-        for(int i =0; i<array.size()-1;i++){
-            for(int j=0;j<array.size()-1;j++){
-                if(array.get(i)==array.get(i)){
-                    z++;
-                }
 
-            }
+        public static boolean isValidSubsequence(List<Integer> array, List<Integer> sequence) {
+            // Write your code here.
+            int j = 0;
+            for (int i = 0; i < array.size(); i++)
+                if (i < array.size() && j < sequence.size() && array.get(i) == sequence.get(j)) ++j;
 
+            return (j == sequence.size());
         }
-        if(z == sequence.size()){
-            return true;
-        }
-        return false;
-    }
+
+
+
 
 
 

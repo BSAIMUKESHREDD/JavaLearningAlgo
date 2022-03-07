@@ -23,7 +23,6 @@ public class BST_Insert_remove_Delete {
                         currentNode.left = newNode;
                     }
                     else{
-                        currentNode = currentNode.left;
                     }
                 }else {
                     if(currentNode.right == null){
@@ -31,7 +30,6 @@ public class BST_Insert_remove_Delete {
                         currentNode.right = newNode;
 
                     }else{
-                        currentNode = currentNode.right;
                     }
                 }
 
@@ -40,8 +38,22 @@ public class BST_Insert_remove_Delete {
 
             public boolean contains(int value) {
                 // Write your code here.
+               if(this.value<value) {
+                   if (left == null) {
+                       return false;
+                   } else {
+                       return left.contains(value);
+                   }
+               }
+                   else if(this.value>value){
+                       if(right==null){return false;}
+                       else{return right.contains(value);}
+                   }
+                   else{
+                       return false;
+               }
 
-                return false;
+
             }
 
             public BST remove(int value) {
