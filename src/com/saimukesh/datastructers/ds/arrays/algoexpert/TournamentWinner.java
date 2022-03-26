@@ -2,29 +2,48 @@ package com.saimukesh.datastructers.ds.arrays.algoexpert;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 public class TournamentWinner {
 
     public static String tournamentWinner(
             ArrayList<ArrayList<String>> competitions, ArrayList<Integer> results) {
         // Write your code here.
-        for (int i = 0; i <competitions.size() ; i++) {
-             int a = (results.get(i));
+        Map<String,Integer> map = new HashMap<String,Integer>();
 
-            // System.out.println(competitions.get(i));
-             // String[] arr = (String[]) competitions.get(i).toArray();
-            //System.out.println(competitions.get(i));
-            for(int j=0;j<2 ; competitions.get(i)){
-                //System.out.println(j);
-                if(a==0){
+        for (int i = 0; i < results.size()-1 ; i++) {
+            if(i==0){
+                for (int j = 0; j < competitions.size()-1; j++) {
 
-                }else{
+                    System.out.println(competitions.get(0));
 
+                    competitions.get(0).forEach(s -> {
+                        //System.out.println(s);
+                        int sum =0;
+
+                        map.putIfAbsent(s,sum);
+                    });
                 }
+            }
+            if(i==1){
+
+
+                    System.out.println(competitions.get(1));
+
+                    competitions.get(1).forEach(s -> {
+                        //System.out.println(s);
+                        int sum =3;
+
+                        map.putIfAbsent(s,sum);
+                    });
 
             }
 
+
         }
+
+        //System.out.println(map);
 
         return "";
     }
