@@ -1,9 +1,6 @@
 package com.saimukesh.datastructers.ds.arrays.algoexpert;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class TournamentWinner {
 
@@ -11,41 +8,27 @@ public class TournamentWinner {
             ArrayList<ArrayList<String>> competitions, ArrayList<Integer> results) {
         // Write your code here.
         Map<String,Integer> map = new HashMap<String,Integer>();
+        final int[] sum = {0};
 
-        for (int i = 0; i < results.size()-1 ; i++) {
-            if(i==0){
-                for (int j = 0; j < competitions.size()-1; j++) {
+        competitions.forEach(strings -> {
+            // System.out.println(strings.get(1));
+                    for (int i = 0; i < results.size()-1 ; i++) {
+                        if(i==0){
+                            map.putIfAbsent(strings.get(0), sum[0]);
+                        }
+                        if(i==1){
+                             sum[0] +=3;
+                            map.putIfAbsent(strings.get(1), sum[0]);
+                        }
+                    }
 
-                    System.out.println(competitions.get(0));
-
-                    competitions.get(0).forEach(s -> {
-                        //System.out.println(s);
-                        int sum =0;
-
-                        map.putIfAbsent(s,sum);
-                    });
-                }
-            }
-            if(i==1){
-
-
-                    System.out.println(competitions.get(1));
-
-                    competitions.get(1).forEach(s -> {
-                        //System.out.println(s);
-                        int sum =3;
-
-                        map.putIfAbsent(s,sum);
-                    });
-
-            }
+        });
 
 
-        }
 
-        //System.out.println(map);
+        String key = Collections.max(map.entrySet(), Map.Entry.comparingByValue()).getKey();
 
-        return "";
+        return key;
     }
 
     public static void main(String[] args) {
@@ -58,7 +41,9 @@ public class TournamentWinner {
         competitions.add(competition3);
         ArrayList<Integer> results = new ArrayList<Integer>(Arrays.asList(0, 0, 1));
 
-        tournamentWinner(competitions,results);
+        String ans =tournamentWinner(competitions,results);
+        System.out.println(ans);
+
     }
 
 }
