@@ -6,22 +6,24 @@ public class NonConstructibleChange {
 
     public static int nonConstructibleChange(int[] coins) {
         // Write your code here.
-        int[] possible = new int[coins.length];
-        for (int i = 0; i <coins.length ; i++) {
-            //System.out.println(coins[i]);
-            for (int j = 0; j <coins.length ; j++) {
-              //  System.out.println(coins[j]);
-                possible[i] = coins[i]+coins[j];
-                System.out.println(possible[i]);
+        Arrays.sort(coins);
+                int curr=0;
+                for(int coin : coins){
+                   // System.out.println(coin);
+                    if(coin > curr+1){
+                        return curr+1;
+                    }
+                    curr += coin;
+                }
+                return curr+1;
             }
-        }
 
-        return -1;
-    }
+
+
 
     public static void main(String[] args) {
-      int[] coins = {1,2,5};
-      //int[] coins = {5, 7, 1, 1, 2, 3, 22};
-        nonConstructibleChange(coins);
+     // int[] coins = {1,2,5};
+      int[] coins = {5, 7, 1, 1, 2, 3, 22};
+        System.out.println(nonConstructibleChange(coins));
     }
 }
