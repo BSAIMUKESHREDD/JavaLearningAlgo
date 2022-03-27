@@ -7,22 +7,42 @@ import java.util.List;
 public class ThreeNUmberSum {
     public static List<Integer[]> threeNumberSum(int[] array, int targetSum) {
         //
-        List<Integer[]> ans = new ArrayList<Integer[]>();
+        List<Integer[]> triplet = new ArrayList<Integer[]>();
+        Integer[] ans = new Integer[3];
         Arrays.sort(array);
-       int left ;
-       int right;
-       int curr;
-        for (int i = 0; i < array.length; i++) {
-            left = array[i];
-            right= array[array.length];
-            curr= array[i];
+
+        for (int i = 0; i < array.length-2; i++) {
+            int left =i+1;
+            int right = array.length-1;
+           // int curr;
+            while(left<right){
+                int curr = array[left]+array[right]+array[i];
+                if(curr==targetSum){
+                     ans  = new Integer[]{array[i], array[left], array[right]};
+                     triplet.add(ans);
+                     left++;
+                     right--;
+
+                }
+                else if(curr<targetSum){
+                    left++;
+                }
+                else if(curr>targetSum){
+                    right--;
+                }
+            }
+
         }
-        return ans;
+        return triplet;
     }
 
     public static void main(String[] args) {
 
         List<Integer[]> output = threeNumberSum(new int[] {12, 3, 1, 2, -6, 5, -8, 6}, 0);
-        System.out.println(output.get(0));
+
+
+
+
+
     }
 }
