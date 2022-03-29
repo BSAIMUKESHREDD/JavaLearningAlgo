@@ -15,14 +15,14 @@ public class SpiralTransversal {
         int i=0;
             while(top<=bottom && left<=right) {
                 if (direction == 0) {
-                    for (int j = left; j < array.length; j++) {
+                    for (int j = left; j <=bottom ; j++) {
                         ans.add(array[top][j]);
                         System.out.println(array[top][j]);
                     }
                     top++;
                 }
                 else if(direction ==1){
-                    for (int j = top; j < bottom; j++) {
+                    for (int j = top; j <= bottom; j++) {
                         ans.add(array[j][right]);
                         System.out.println(array[j][right]);
                     }
