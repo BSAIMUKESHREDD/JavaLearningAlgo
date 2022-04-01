@@ -10,23 +10,27 @@ public class fourSUm {
         // Write your code here.
         List<Integer[]> list = new ArrayList<Integer[]>();
         Integer[] toBeAdded = new Integer[4];
-        for (int i : array) {
-            for (int j : array) {
-                for (int k : array) {
-                    int sum = i + j + k;
-                    if (sum - targetSum == 0) {
-                        toBeAdded = new Integer[]{i, j, k, sum - targetSum};
-                    }
-                }
-            }
-        }
-        list.add(toBeAdded);
+     for(int i =0 ; i< array.length-3;i++){
+         for(int j=i+1;j< array.length-2;j++){
+             for(int k =j+1 ; k< array.length-1;k++){
+                 for (int l = k+1; l < array.length; l++) {
+
+
+                     if (array[i] + array[j] + array[k] + array[l] == targetSum) {
+                         toBeAdded = new Integer[]{array[i], array[j], array[k], array[l]};
+                         list.add(toBeAdded);
+                     }
+                 }
+             }
+         }
+     }
+
         return list;
     }
 
     public static void main(String[] args) {
         int[] ques = new int[] {7, 6, 4, -1, 1, 2};
-      List<Integer[]>  kList =  fourNumberSum(ques,6);
+      List<Integer[]>  kList =  fourNumberSum(ques,16);
         for(Integer[] array : kList) {
             System.out.println(Arrays.toString(array));
         }
