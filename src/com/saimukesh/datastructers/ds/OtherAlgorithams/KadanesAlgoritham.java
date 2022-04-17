@@ -37,9 +37,24 @@ public class KadanesAlgoritham {
         return maxsum;
     }
 
-    public static void main(String[] args) {
+    public static int kadanesAlgorithms1(int[] array) {
+        int max = array[0];
+        int localMax= array[0];
+
+        for(int i=1;i<array.length;i++){
+            int num = array[i];
+            max = Math.max(num,max+num);
+            localMax = Math.max(localMax,max);
+        }
+
+        return localMax;
+    }
+
+
+        public static void main(String[] args) {
         int[] input = {-10, -2, -9, -4, -8, -6, -7, -1, -3, -5};
-        System.out.println(kadanesAlgorithm(input));
+     //   System.out.println(kadanesAlgorithm(input));
+            System.out.println(kadanesAlgorithms1(input));
 
     }
 }
