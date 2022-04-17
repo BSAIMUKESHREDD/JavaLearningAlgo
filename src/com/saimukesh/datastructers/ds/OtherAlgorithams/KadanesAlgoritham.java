@@ -4,9 +4,21 @@ public class KadanesAlgoritham {
 
     public static int kadanesAlgorithm(int[] array) {
         // Write your code here.
+        int negtiveSum=-1;
+        int maxmeg=0;
         int maxsum=0;
         int sum =0;
+        int lenght =0;
         for (int i = 0; i < array.length; i++) {
+
+            if(array[i]<0){
+                lenght++;
+                maxmeg = Math.max(negtiveSum,array[i]);
+               // System.out.println(maxmeg);
+
+            }
+
+
             sum = sum+array[i];
 
             if(sum>maxsum){
@@ -17,13 +29,17 @@ public class KadanesAlgoritham {
                 sum=0;
             }
         }
+
+        if(lenght == array.length){
+            return maxmeg;
+        }
         System.out.println(maxsum);
         return maxsum;
     }
 
     public static void main(String[] args) {
-        int[] input = {3, 5, -9, 1, 3, -2, 3, 4, 7, 2, -9, 6, 3, 1, -5, 4};
-kadanesAlgorithm(input);
+        int[] input = {-10, -2, -9, -4, -8, -6, -7, -1, -3, -5};
+        System.out.println(kadanesAlgorithm(input));
 
     }
 }
