@@ -28,18 +28,21 @@ public class StackusingList {
             // Write your code here.
             int size = list.size();
             int min =100;
-            System.out.println(min);
-            while(size>=1){
-                System.out.println("hii");
+          //  System.out.println(min);
+            while(size>1){
+                //System.out.println("hii");
 
                 if(min>=MinMaxStack.peek()){
                     min = MinMaxStack.peek();
+                  //  System.out.println(min);
                 }
                  MinMaxStack.pop();
+                //System.out.println(min);
 
                 size--;
             }
             return min;
+
         }
 
         public int getMax() {
@@ -51,8 +54,10 @@ public class StackusingList {
 
     public static void main(String[] args) {
 
-         MinMaxStack.push(10);
-        MinMaxStack.push(20);
+
+
+         MinMaxStack.push(20);
+        MinMaxStack.push(10);
         MinMaxStack.push(30);
       int b =   MinMaxStack.getMin();
         System.out.println(b);
