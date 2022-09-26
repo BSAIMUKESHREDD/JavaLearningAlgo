@@ -1,6 +1,9 @@
 package com.saimukesh.datastructers.ds.arrays.algoexpert;
 
 public class ArrayOfProducts {
+   public public static void main(String[] args) {
+       System.out.println("HI");
+   }
     public static int[] arrayOfProducts(int[] array) {
         // Write your code here.
         int prod=1;
